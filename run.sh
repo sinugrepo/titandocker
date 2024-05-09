@@ -18,7 +18,7 @@ mkdir ~/.titanedge
 # Run Docker containers nat
 docker run --network=host -d -v ~/.titanedge:/root/.titanedge --name titan1 nezha123/titan-edge:latest
 
-sleep 5
+sleep 10
 
 # Bind containers to API
 docker exec titan1 titan-edge bind --hash=5D6040E3-AF64-47F1-9B42-D0FA4436C240 https://api-test1.container1.titannet.io/api/v2/device/binding
@@ -26,5 +26,12 @@ docker exec titan1 titan-edge bind --hash=5D6040E3-AF64-47F1-9B42-D0FA4436C240 h
 # Set storage size for containers
 docker exec titan1 titan-edge config set --storage-size 59GB
 
-#restart
+sleep 5
+
+cd /root/.titanedge
+
+sed -i 's#LocatorURL = "https://test-locator.titannet.io:5000/rpc/v0"#LocatorURL = "https://us-locator.titannet.io:5000/rpc/v0"#' config.toml
+
+sleep 2
+
 docker restart titan1
