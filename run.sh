@@ -30,7 +30,7 @@ sleep 5
 
 cd /root/.titanedge
 
-sed -i 's#LocatorURL = "https://test-locator.titannet.io:5000/rpc/v0"#LocatorURL = "https://us-locator.titannet.io:5000/rpc/v0"#' config.toml
+sed -i 's#LocatorURL = "https://test-locator.titannet.io:5000/rpc/v0"#LocatorURL = "https://sg-locator.titannet.io:5000/rpc/v0"#' config.toml
 
 sleep 2
 
