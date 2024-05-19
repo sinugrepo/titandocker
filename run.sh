@@ -32,6 +32,10 @@ cd /root/.titanedge
 
 sed -i 's#LocatorURL = "https://test-locator.titannet.io:5000/rpc/v0"#LocatorURL = "https://us-locator.titannet.io:5000/rpc/v0"#' config.toml
 
+sleep 1
+
+docker update --restart=always titan1
+
 sleep 2
 
 docker restart titan1
