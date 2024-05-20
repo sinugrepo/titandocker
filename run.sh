@@ -24,7 +24,7 @@ sleep 10
 docker exec titan1 titan-edge bind --hash=5D6040E3-AF64-47F1-9B42-D0FA4436C240 https://api-test1.container1.titannet.io/api/v2/device/binding
 
 # Set storage size for containers
-docker exec titan1 titan-edge config set --storage-size 59GB
+docker exec titan1 titan-edge config set --storage-size 58GB
 
 sleep 5
 
