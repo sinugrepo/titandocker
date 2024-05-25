@@ -3,6 +3,9 @@
 # Update package lists
 apt update -y
 
+ufw allow 1234
+
+sleep 1
 # Install Docker
 apt-get install docker.io -y
 
@@ -24,13 +27,13 @@ sleep 10
 docker exec titan1 titan-edge bind --hash=5D6040E3-AF64-47F1-9B42-D0FA4436C240 https://api-test1.container1.titannet.io/api/v2/device/binding
 
 # Set storage size for containers
-docker exec titan1 titan-edge config set --storage-size 58GB
+docker exec titan1 titan-edge config set --storage-size 90GB
 
 sleep 5
 
 cd /root/.titanedge
 
-sed -i 's#LocatorURL = "https://test-locator.titannet.io:5000/rpc/v0"#LocatorURL = "https://us-locator.titannet.io:5000/rpc/v0"#' config.toml
+sed -i 's#LocatorURL = "https://test-locator.titannet.io:5000/rpc/v0"#LocatorURL = "https://sg-locator.titannet.io:5000/rpc/v0"#' config.toml
 
 sleep 1
 
